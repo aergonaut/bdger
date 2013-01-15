@@ -1,6 +1,6 @@
 ![BDGER](https://that-old-black-magic.s3.amazonaws.com/assets/bdger.png)
 
-**Bdger** (say: "badger") is an unofficial companion site to the [Lifescouts](http://lifescouts.com) project started by [Alex Day](http://youtube.com/nerimon). It is intended to provide a more centralized place for people to track their badges, see what other badges are available, and see what badges friends have.
+[**Bdger**](http://www.bdger.com) (say: "badger") is an unofficial companion site to the [Lifescouts](http://lifescouts.com) project started by [Alex Day](http://youtube.com/nerimon). It is intended to provide a more centralized place for people to track their badges, see what other badges are available, and see what badges friends have.
 
 Bdger is written in Ruby, runs on Rails, and is powered by Heroku.
 
