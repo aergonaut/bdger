@@ -6,6 +6,7 @@ gem 'rails', '3.2.11'
 gem 'pg'
 gem 'unicorn'
 gem 'jquery-rails'
+gem 'haml'
 gem 'redcarpet'
 gem 'simple_form'
 
