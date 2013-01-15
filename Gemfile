@@ -24,8 +24,11 @@ gem 'carrierwave'
 gem 'carrierwave_direct'
 gem 'fog', '~> 1.3.1'
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
+end
+
+group :test do
   gem 'capybara'
 end
 
