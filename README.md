@@ -8,8 +8,6 @@ Bdger is written in Ruby, runs on Rails, and is powered by Heroku.
 
 ## Contributing
 
-If you found a bug or want to suggest a feature
-
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
@@ -17,6 +15,10 @@ If you found a bug or want to suggest a feature
 5. Send me a pull request
 
 _Please_ include tests in your pull request! That way I won't accidentally break something further down the line.
+
+## Bugs
+
+Report all bugs through the [issue tracker](https://github.com/aergonaut/bdger/issues).
 
 ## License
 
