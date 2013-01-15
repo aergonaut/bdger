@@ -1,6 +1,6 @@
 ![BDGER](https://that-old-black-magic.s3.amazonaws.com/assets/bdger.png)
 
-**Bdger** is an unofficial companion site to the [Lifescouts](http://lifescouts.com) project started by [Alex Day](http://youtube.com/nerimon). It is intended to provide a more centralized place for people to track their badges, see what other badges are available, and see what badges friends have.
+**Bdger** (say: "badger") is an unofficial companion site to the [Lifescouts](http://lifescouts.com) project started by [Alex Day](http://youtube.com/nerimon). It is intended to provide a more centralized place for people to track their badges, see what other badges are available, and see what badges friends have.
 
 Bdger is written in Ruby, runs on Rails, and is powered by Heroku.
 
@@ -18,7 +18,7 @@ _Please_ include tests in your pull request! That way I won't accidentally break
 
 ## License
 
-Copyright (c) 2013 Chris Fung
+Copyright (c) 2013 [Chris Fung](http://aergonaut.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
