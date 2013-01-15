@@ -1,0 +1,20 @@
+body {
+  background: url('../img/topbar.png') top left repeat-x;
+}
+
+#horizon {
+  height: 1px;
+  overflow: visible;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+
+#content {
+  width: 500px;
+  height: 156px;
+  position: absolute;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -78px;
+}
