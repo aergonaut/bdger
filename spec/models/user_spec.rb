@@ -45,5 +45,20 @@ describe User do
     end
   end
 
+  describe "with provider" do
+    before do
+      @user.provider = "twitter"
+      @user.uid = "12345"
+    end
 
+    describe "email is not required" do
+      before { @user.email = "" }
+      it { should be_valid }
+    end
+
+    describe "password is not required" do
+      before { @user.password = "" }
+      it { should be_valid }
+    end
+  end
 end
