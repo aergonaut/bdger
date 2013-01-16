@@ -1,0 +1,14 @@
+@import 'bootstrap';
+@import 'font-awesome';
+
+/* global top bar */
+#topbar {
+  background: image-url("topbar.png") top right repeat-x;
+  height: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+body {
+  padding-top: 20px;
+}

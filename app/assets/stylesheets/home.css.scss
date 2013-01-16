@@ -1,3 +1,43 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$darkGrey: #888;
+
+#main {
+  margin-top: 40px;
+
+  #logo {
+    height: 156px;
+  }
+
+  #signin {
+    height: 156px;
+    text-align: center;
+
+    #buttonWrap {
+      left: 50%;
+      margin-top: -18px;
+      margin-left: -85px;
+      position: relative;
+      top: 50%;
+      width: 170px;
+
+      #btn-signin {
+        margin-bottom: 5px;
+      }
+
+      #privacy {
+        border-bottom: 1px dotted $darkGrey;
+        color: $darkGrey;
+        font-size: 12px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+  .popover-content {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

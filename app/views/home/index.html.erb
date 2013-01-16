@@ -1,2 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row" id="main">
+  <div class="span8" id="logo">
+    <img src="<%= image_path("bdger.png") %>" width="500" height="156" />
+  </div>
+  <div class="span4" id="signin">
+    <div id="buttonWrap">
+      <a class="btn btn-info" id="btn-signin"><i class="icon-twitter"></i>&nbsp;&nbsp;Sign in with Twitter</a>
+      <a id="privacy" rel="popover" href="#" data-placement="bottom" data-content="We use Twitter so you don&rsquo;t have to remember another password. We will never change your profile picture and will only tweet from your account if you tell us to!">Why?</a>
+    </div>
+  </div>
+</div>
