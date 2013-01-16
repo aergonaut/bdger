@@ -4,8 +4,12 @@
   </div>
   <div class="span4" id="signin">
     <div id="buttonWrap">
-      <a class="btn btn-info" id="btn-signin"><i class="icon-twitter"></i>&nbsp;&nbsp;Sign in with Twitter</a>
-      <a id="privacy" rel="popover" href="#" data-placement="bottom" data-content="We use Twitter so you don&rsquo;t have to remember another password. We will never change your profile picture and will only tweet from your account if you tell us to!">Why?</a>
+      <% if current_user %>
+        <a class="btn" href="<%= destroy_user_session_path %>" data-method="delete"><i class="icon-signout"></i>&nbsp;&nbsp;Sign out <strong><%= current_user.username %></strong></a>
+      <% else %>
+        <a class="btn btn-info" id="btn-signin" href="<%= user_omniauth_authorize_path(:twitter) %>"><i class="icon-twitter"></i>&nbsp;&nbsp;Sign in with Twitter</a>
+        <a id="privacy" rel="popover" href="#" data-placement="bottom" data-content="We use Twitter so you don&rsquo;t have to remember another password. We will never change your profile picture and will only tweet from your account if you tell us to!">Why?</a>
+      <% end %>
     </div>
   </div>
 </div>
