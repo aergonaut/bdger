@@ -1,8 +1,12 @@
-language: "ruby"
+---
+language: ruby
 rvm:
-  - "1.9.3"
+- 1.9.3
 before_script:
-  - psql -c 'create database bdger_test;' -U postgres
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-script: "bundle exec rspec spec"
+- psql -c 'create database bdger_test;' -U postgres
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+script: bundle exec rspec spec
+env:
+  global:
+  - secure: "N4nTO6CLsmkmsqEu4IIxTCJKfeLkDS21gorUS3qEE5O4D3bJxiOqdhnlR1uy\nWQS/HH9JNr84umZC69eq6Dg7qNo6qtJNITNoc6CFirqJ1ushGLAJEh0PPdxo\nWy+EnEF3xauflNc5XU7TSMt+8jEe4HGRTw3o/EKgFq3pws3wW/c="
