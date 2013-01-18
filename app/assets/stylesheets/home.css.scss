@@ -1,49 +1,53 @@
 $darkGrey: #888;
 
-#main {
-  margin-top: 40px;
+body#home {
+  background-color: #fff;
 
-  #logo {
-    height: 156px;
-  }
+  #main {
+    margin-top: 40px;
 
-  #signin {
-    height: 156px;
-    text-align: center;
+    #logo {
+      height: 156px;
+    }
 
-    #buttonWrap {
-      left: 50%;
-      margin-top: -18px;
-      margin-left: -85px;
-      position: relative;
-      top: 50%;
-      width: 170px;
+    #signin {
+      height: 156px;
+      text-align: center;
 
-      #btn-signin {
-        margin-bottom: 5px;
-      }
+      #buttonWrap {
+        left: 50%;
+        margin-top: -18px;
+        margin-left: -85px;
+        position: relative;
+        top: 50%;
+        width: 170px;
 
-      #privacy {
-        border-bottom: 1px dotted $darkGrey;
-        color: $darkGrey;
-        font-size: 12px;
+        #btn-signin {
+          margin-bottom: 5px;
+        }
 
-        &:hover {
-          text-decoration: none;
+        #privacy {
+          border-bottom: 1px dotted $darkGrey;
+          color: $darkGrey;
+          font-size: 12px;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
+
     }
 
-  }
+    .popover {
+      .popover-title {
+        display: none;
+      }
 
-  .popover {
-    .popover-title {
-      display: none;
-    }
-
-    .popover-content {
-      font-size: 12px;
-      line-height: 18px;
+      .popover-content {
+        font-size: 12px;
+        line-height: 18px;
+      }
     }
   }
 }

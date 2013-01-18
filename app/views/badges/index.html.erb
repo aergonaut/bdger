@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h1>All the badges <small>Gotta catch &lsquo;em all!</small></h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <ul class="thumbnails">
+      <% @badges.each do |badge| %>
+      <li class="span3">
+        <div class="thumbnail">
+          <img src="http://24.media.tumblr.com/34c13686c02c80fa585c7afe5c36166b/tumblr_mg7icx7J2p1rha3vbo1_r1_500.png" width="200" />
+          <h5><%= badge.name %></h5>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
