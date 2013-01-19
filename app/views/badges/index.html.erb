@@ -11,8 +11,10 @@
       <% @badges.each do |badge| %>
       <li class="span3">
         <div class="thumbnail">
-          <img src="http://24.media.tumblr.com/34c13686c02c80fa585c7afe5c36166b/tumblr_mg7icx7J2p1rha3vbo1_r1_500.png" width="200" />
-          <h5><%= badge.name %></h5>
+          <a href="<%= badge_path(badge) %>">
+            <img src="http://24.media.tumblr.com/34c13686c02c80fa585c7afe5c36166b/tumblr_mg7icx7J2p1rha3vbo1_r1_500.png" width="200" />
+          </a>
+          <h5><%= link_to badge.name, badge_path(badge) %></h5>
         </div>
       </li>
       <% end %>
