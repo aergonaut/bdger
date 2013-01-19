@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'redcarpet'
 gem 'simple_form'
+gem 'friendly_id'
 
 # twitter bootstrap
 gem 'bootstrap-sass'

@@ -10,8 +10,18 @@ describe Badge do
 
   subject { @badge }
 
-  describe "when name is empty" do
-    before { @badge.name = "" }
-    it { should_not be_valid }
+  describe "name" do
+    describe "cannot be empty" do
+      before { @badge.name = "" }
+      it { should_not be_valid }
+    end
+
+    describe "must be unique" do
+      before do
+        dup_badge = @badge.dup
+        dup_badge.save
+      end
+      it { should_not be_valid }
+    end
   end
 end

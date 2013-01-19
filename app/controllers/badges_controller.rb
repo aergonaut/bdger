@@ -4,11 +4,11 @@ class BadgesController < ApplicationController
   end
 
   def new
-    @badge = Badge.build
+    @badge = Badge.new
   end
 
   def create
-    @badge = Badge.build params[:badge]
+    @badge = Badge.new params[:badge]
     if @badge.save
       flash[:success] = "Badge saved."
       redirect_to badges_path
