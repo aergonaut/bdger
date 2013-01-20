@@ -10,19 +10,7 @@
 
   <div id="topbar"></div>
 
-  <div class="container nav-container">
-    <div class="row">
-      <div class="span12">
-        <div class="btn-toolbar pull-right">
-          <div class="btn-group">
-            <a href="#" class="btn btn-large">Me</a>
-            <a href="#" class="btn btn-large">Settings</a>
-          </div>
-          <a class="btn btn-large btn-link logout-link"><i class="icon-signout"></i> Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "shared/nav" %>
 
   <div class="container main-content">
 <%= yield %>
@@ -32,7 +20,7 @@
     <div class="row">
       <div class="span12">
         <ul class="inline muted">
-          <li>&copy; <%= Time.now.year %> Bdger</li>
+          <li>&copy; <%= Time.now.year %> <%= link_to "aergonaut", "http://aergonaut.com", rel: "external" %></li>
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Privacy", privacy_path %></li>
           <li><%= link_to "FAQ", faq_path %></li>

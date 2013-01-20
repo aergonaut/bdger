@@ -20,6 +20,11 @@ body {
 .nav-container {
   margin-bottom: 1em;
 
+  .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   .logout-link:hover {
     text-decoration: none;
   }
