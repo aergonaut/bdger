@@ -1,6 +1,6 @@
 body#badges {
 
-  .container {
+  .container.main-content {
     background: #fff;
     border: 1px solid #d9d9d9;
     -moz-border-radius: 3px;
@@ -19,6 +19,48 @@ body#badges {
       -webkit-box-shadow: none;
       box-shadow: none;
       text-align: center;
+    }
+
+    .badge-icon {
+      text-align: center;
+    }
+
+    .props-title {
+      margin-bottom: 0.5em;
+      margin-top: 1em;
+
+      span.count {
+        font-weight: bold;
+      }
+    }
+
+    ul.inline.props {
+
+      li {
+        padding: 2.5px;
+      }
+
+      .check-icon {
+        font-size: 1.5em;
+        color: orange;
+        padding: 2.5px 5.5px;
+
+        .icon-check {
+          vertical-align: middle;
+        }
+      }
+
+      .face img {
+        border-radius: 3px;
+      }
+    }
+
+    .meta-links {
+      font-size: 12px;
+
+      a:hover {
+        text-decoration: none;
+      }
     }
   }
 }

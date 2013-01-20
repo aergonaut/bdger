@@ -2,14 +2,51 @@
 @import 'font-awesome';
 
 /* global top bar */
+
 #topbar {
   background: image-url("topbar.png") top right repeat-x;
   height: 5px;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1337;
 }
+
 body {
   padding-top: 20px;
   background-color: #f6f6f6;
+}
+
+.nav-container {
+  margin-bottom: 1em;
+
+  .logout-link:hover {
+    text-decoration: none;
+  }
+}
+
+.container.footer-content {
+  font-size: 12px;
+  margin: 1em auto;
+}
+
+
+.muted {
+
+  a {
+    color: #999 !important;
+  }
+}
+
+a.muted {
+  color: #999 !important;
+
+  &:hover {
+    color: #999 !important;
+  }
+}
+
+.inactive {
+  color: #999 !important;
+  cursor: default;
 }

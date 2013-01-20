@@ -4,6 +4,11 @@ Bdger::Application.routes.draw do
   # badges
   resources :badges
 
+  match "about" => "home#about", as: "about"
+  match "privacy" => "home#privacy", as: "privacy"
+  match "faq" => "home#faq", as: "faq"
+  match "contact" => "home#contact", as: "contact"
+
   root to: "home#index"
 
   # The priority is based upon order of creation:

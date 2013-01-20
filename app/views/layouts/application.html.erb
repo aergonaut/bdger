@@ -10,8 +10,36 @@
 
   <div id="topbar"></div>
 
-  <div class="container">
+  <div class="container nav-container">
+    <div class="row">
+      <div class="span12">
+        <div class="btn-toolbar pull-right">
+          <div class="btn-group">
+            <a href="#" class="btn btn-large">Me</a>
+            <a href="#" class="btn btn-large">Settings</a>
+          </div>
+          <a class="btn btn-large btn-link logout-link"><i class="icon-signout"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container main-content">
 <%= yield %>
+  </div>
+
+  <div class="container footer-content">
+    <div class="row">
+      <div class="span12">
+        <ul class="inline muted">
+          <li>&copy; <%= Time.now.year %> Bdger</li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Privacy", privacy_path %></li>
+          <li><%= link_to "FAQ", faq_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
 </body>
