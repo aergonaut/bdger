@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="span12">
+    <%= simple_form_for badge, html: { class: "form-horizontal" } do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, input_html: { class: "span6" } %>
+      <%= f.input :big_cartel_link, input_html: { class: "span6" } %>
+      <%= f.input :tumblr_link, input_html: { class: "span6" } %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.button :submit, class: "btn-primary" %>
+          <% if params[:action] == "edit" %>
+            <%= link_to "View", badge_path(@badge), class: "btn btn-success" %>
+            <%= link_to "Delete", badge_path(@badge), method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
