@@ -1,5 +1,5 @@
 Bdger::Application.routes.draw do
-  # users
+  # devise
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   devise_scope :user do
     get "sign_in", to: "devise/sessions#new", as: :new_user_session
@@ -9,10 +9,15 @@ Bdger::Application.routes.draw do
   # badges
   resources :badges
 
-  match "about" => "home#about", as: "about"
-  match "privacy" => "home#privacy", as: "privacy"
-  match "faq" => "home#faq", as: "faq"
-  match "contact" => "home#contact", as: "contact"
+  match "about" => "home#about", as: :about
+  match "privacy" => "home#privacy", as: :privacy
+  match "faq" => "home#faq", as: :faq
+  match "contact" => "home#contact", as: :contact
+
+  # users
+  get ":username" => "users#show", as: :user
+  get ":username/edit" => "users#edit", as: :edit_user
+  put ":username" => "users#update"
 
   root to: "home#index"
 
