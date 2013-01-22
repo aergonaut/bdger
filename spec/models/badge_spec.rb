@@ -10,6 +10,12 @@ describe Badge do
 
   subject { @badge }
 
+  it { should respond_to :name }
+  it { should respond_to :big_cartel_link }
+  it { should respond_to :tumblr_link }
+
+  it { should be_valid }
+
   describe "name" do
     describe "cannot be empty" do
       before { @badge.name = "" }
