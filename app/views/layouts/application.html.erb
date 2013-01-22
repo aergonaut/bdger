@@ -10,7 +10,7 @@
 
   <div id="topbar"></div>
 
-  <%= render "shared/nav" %>
+  <%= render "shared/nav" unless params[:controller] == "home" and params[:action] == "index" %>
 
   <div class="container main-content">
     <div class="row">
