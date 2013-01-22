@@ -7,7 +7,7 @@
       <div class="btn-toolbar pull-right">
         <% if user_signed_in? %>
           <div class="btn-group">
-            <a href="#" class="btn btn-large">Me</a>
+            <%= link_to "Me", user_path(current_user), class: "btn btn-large" %>
             <a href="#" class="btn btn-large">Settings</a>
           </div>
           <a class="btn btn-large btn-link logout-link" href="<%= destroy_user_session_path %>"><i class="icon-signout"></i> Logout</a>
