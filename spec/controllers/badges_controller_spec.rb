@@ -11,7 +11,7 @@ describe BadgesController do
     it "should assign all badges" do
       badge = create :badge
       get :index
-      expect(assigns(:badges)).to eq([badge])
+      assigns(:badges).should == [badge]
     end
   end
 
