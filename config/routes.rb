@@ -15,8 +15,9 @@ Bdger::Application.routes.draw do
   match "contact" => "home#contact", as: :contact
 
   # users
+  get "profile" => "users#profile", as: :profile
   get ":username" => "users#show", as: :user
-  get ":username/edit" => "users#edit", as: :edit_user
+  get "profile/edit" => "users#edit", as: :edit_profile
   put ":username" => "users#update"
 
   root to: "home#index"
