@@ -2,13 +2,15 @@ require 'spec_helper'
 
 describe User do
   before do
-    @user = FactoryGirl.build :user
+    @user = build :user
   end
 
   subject { @user }
 
   it { should respond_to :username }
   it { should respond_to :slug }
+  it { should respond_to :achievements }
+  it { should respond_to :badges }
 
   it { should be_valid }
 

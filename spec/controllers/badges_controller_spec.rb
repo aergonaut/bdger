@@ -9,7 +9,7 @@ describe BadgesController do
     end
 
     it "should assign all badges" do
-      badge = FactoryGirl.create :badge
+      badge = create :badge
       get :index
       expect(assigns(:badges)).to eq([badge])
     end
@@ -17,7 +17,7 @@ describe BadgesController do
 
   describe "GET 'show'" do
     before :each do
-      @badge = FactoryGirl.create :badge
+      @badge = create :badge
     end
 
     it "should be successful" do

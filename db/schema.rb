@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121075936) do
+ActiveRecord::Schema.define(:version => 20130123032943) do
+
+  create_table "achievements", :force => true do |t|
+    t.integer  "badge_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.string   "short_hash"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "achievements", ["short_hash"], :name => "index_achievements_on_short_hash", :unique => true
+  add_index "achievements", ["slug"], :name => "index_achievements_on_slug", :unique => true
 
   create_table "badges", :force => true do |t|
     t.string   "name"

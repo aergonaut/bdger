@@ -4,7 +4,7 @@ describe UsersController do
 
   describe "GET 'show'" do
     before :each do
-      @user = FactoryGirl.create :user
+      @user = create :user
     end
 
     it "should be successful" do

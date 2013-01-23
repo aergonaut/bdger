@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Badge do
   before do
-    @badge = FactoryGirl.build :badge
+    @badge = build :badge
   end
 
   subject { @badge }
@@ -10,6 +10,9 @@ describe Badge do
   it { should respond_to :name }
   it { should respond_to :big_cartel_link }
   it { should respond_to :tumblr_link }
+  it { should respond_to :slug }
+  it { should respond_to :achievements }
+  it { should respond_to :users }
 
   it { should be_valid }
 

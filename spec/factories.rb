@@ -10,4 +10,9 @@ FactoryGirl.define do
     provider "twitter"
     uid "12345"
   end
+
+  factory :achievement do
+    badge
+    user
+  end
 end
