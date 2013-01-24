@@ -20,6 +20,14 @@ Bdger::Application.routes.draw do
   get "profile/edit" => "users#edit", as: :edit_profile
   put ":username" => "users#update"
 
+  # achievements
+  get ":username/badges/:achievement_hash" => "achievements#show", as: :achievement
+  get "badges/:badge_id/claim" => "achievements#new", as: :new_achievement
+  post ":username/badges" => "achievements#create", as: :user_badges
+  get ":username/badges/:achievement_hash/edit" => "achievements#edit", as: :edit_achievement
+  put ":username/badges/:achievement_hash" => "achievements#update"
+  delete ":username/badges/:achievement_hash" => "achievements#destroy"
+
   root to: "home#index"
 
   # The priority is based upon order of creation:

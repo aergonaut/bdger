@@ -10,7 +10,7 @@
       <div class="span8">
         <ul class="inline">
           <% if user_signed_in? %>
-            <li><a href="#"><i class="icon-plus"></i> Claim this badge</a></li>
+            <li><a href="<%= new_achievement_path(@badge) %>"><i class="icon-plus"></i> Claim this badge</a></li>
           <% end %>
           <li><a href="<%= @badge.big_cartel_link %>" rel="external"><i class="icon-external-link"></i> Buy on Bigcartel</a></li>
           <li><a href="<%= @badge.tumblr_link %>" rel="external"><i class="icon-retweet"></i> Reblog on Tumblr</a></li>
