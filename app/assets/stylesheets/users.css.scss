@@ -11,5 +11,34 @@ body#users {
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0px;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0px;
     padding: 20px;
+
+    #badges-title {
+      margin: 1em 0;
+
+      span {
+        color: #999;
+        font-weight: normal;
+      }
+    }
+
+    .thumbnails {
+      margin-top: 2em;
+
+      .thumbnail {
+        border: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-align: center;
+      }
+    }
+
+    .meta-links {
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
   }
 }

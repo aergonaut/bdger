@@ -1,0 +1,19 @@
+<% provide :title, "#{@achievement.user.username} claimed #{@achievement.badge.name} on Bdger" %>
+<div class="row">
+  <div class="span4 badge-icon">
+    <img src="http://24.media.tumblr.com/34c13686c02c80fa585c7afe5c36166b/tumblr_mg7icx7J2p1rha3vbo1_r1_500.png" width="250" />
+  </div>
+  <div class="span8">
+    <h2><%= link_to @achievement.user.username, user_path(@achievement.user) %> claimed <%= link_to @achievement.badge.name, badge_path(@achievement.badge) %></h2>
+
+    <div class="row meta-links">
+      <div class="span8">
+        <ul class="inline">
+          <li>
+            <i class="icon-time"></i> <%= time_ago_in_words(@achievement.created_at) %> ago
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if user.persisted?
       sign_in_and_redirect user, notice: "Signed in!"
     else
-      redirect_to root
+      redirect_to badges_path
     end
   end
   alias_method :twitter, :all

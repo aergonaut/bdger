@@ -1,52 +1,118 @@
 $darkGrey: #888;
 
-body#home {
+body#root {
   background-color: #fff;
 
-  #main {
-    margin-top: 40px;
+  div#horizon {
+    position: absolute;
+    height: 1px;
+    overflow: visible;
+    top: 50%;
+    width: 100%;
 
-    #logo {
-      height: 156px;
-    }
+    div#wrap {
+      width: 500px;
+      position: absolute;
+      left: 50%;
+      margin-left: -250px;
+      margin-top: -128px;
 
-    #signin {
-      height: 156px;
-      text-align: center;
+      #logo {
+        height: 156px;
+      }
 
-      #buttonWrap {
-        left: 50%;
-        margin-top: -18px;
-        margin-left: -85px;
-        position: relative;
-        top: 50%;
-        width: 170px;
+      #signin {
+        height: 156px;
+        text-align: center;
 
-        #btn-signin {
-          margin-bottom: 5px;
-        }
+        #buttonWrap {
+          width: 400px;
+          margin: 20px 50px;
 
-        #privacy {
-          border-bottom: 1px dotted $darkGrey;
-          color: $darkGrey;
-          font-size: 12px;
+          #btn-signin {
+            margin-bottom: 5px;
+          }
 
-          &:hover {
-            text-decoration: none;
+          #privacy {
+            border-bottom: 1px dotted $darkGrey;
+            color: $darkGrey;
+            font-size: 12px;
+
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }
+    }
+  }
 
+  .footer-content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 1em;
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  .popover {
+    .popover-title {
+      display: none;
     }
 
-    .popover {
-      .popover-title {
-        display: none;
-      }
+    .popover-content {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
 
-      .popover-content {
-        font-size: 12px;
-        line-height: 18px;
+body#home {
+  // background-color: #fff;
+
+  .container.main-content {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0px;
+    padding: 20px;
+
+    #badges-title {
+      margin: 1em 0;
+
+      span {
+        color: #999;
+        font-weight: normal;
+      }
+    }
+
+    .thumbnails {
+      margin-top: 2em;
+
+      .thumbnail {
+        border: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-align: center;
+      }
+    }
+
+    .meta-links {
+
+      a:hover {
+        text-decoration: none;
       }
     }
   }

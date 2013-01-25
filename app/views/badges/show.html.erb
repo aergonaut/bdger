@@ -10,7 +10,13 @@
       <div class="span8">
         <ul class="inline">
           <% if user_signed_in? %>
-            <li><a href="<%= new_achievement_path(@badge) %>"><i class="icon-plus"></i> Claim this badge</a></li>
+            <li id="claim-badge">
+              <% if current_user.badges.include? @badge %>
+                <span class="muted"><i class="icon-plus"></i> You have this badge</span>
+              <% else %>
+                <a href="<%= new_achievement_path(@badge) %>" data-remote="true"><i class="icon-plus"></i> Claim this badge</a>
+              <% end %>
+            </li>
           <% end %>
           <li><a href="<%= @badge.big_cartel_link %>" rel="external"><i class="icon-external-link"></i> Buy on Bigcartel</a></li>
           <li><a href="<%= @badge.tumblr_link %>" rel="external"><i class="icon-retweet"></i> Reblog on Tumblr</a></li>
@@ -20,7 +26,7 @@
 
     <div class="row">
       <div class="span6 props-title">
-        <span class="count">16 people</span> claimed this badge
+        <span class="count"><%= pluralize @badge.achievements.count, "person" %></span> claimed this badge
       </div>
     </div>
 
@@ -30,71 +36,13 @@
           <li class="check-icon">
             <i class="icon-check"></i>
           </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
-          <li class="face">
-            <a href="#">
-              <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
-            </a>
-          </li>
+          <% @badge.achievements.each do |a| %>
+            <li class="face">
+              <a href="<%= achievement_path(a.user, a) %>">
+                <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
+              </a>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

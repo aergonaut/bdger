@@ -9,10 +9,10 @@ Bdger::Application.routes.draw do
   # badges
   resources :badges
 
-  match "about" => "home#about", as: :about
   match "privacy" => "home#privacy", as: :privacy
-  match "faq" => "home#faq", as: :faq
+  match "terms" => "home#terms", as: :terms
   match "contact" => "home#contact", as: :contact
+  match "help" => "home#help", as: :help
 
   # users
   get "profile" => "users#profile", as: :profile
