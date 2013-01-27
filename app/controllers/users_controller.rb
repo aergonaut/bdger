@@ -3,8 +3,11 @@ require "uri"
 class UsersController < ApplicationController
   def show
     @user = User.find params[:username]
-    uri = URI.parse @user.website
-    @website = uri.host
+    @website = unless @user.website.nil?
+      URI.parse @user.website
+    else
+      ""
+    end
   end
 
   def profile
