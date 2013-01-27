@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h1>Edit profile</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <%= simple_form_for current_user, html: { class: "form-horizontal" } do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :website, input_html: { class: "span6" } %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.button :submit, class: "btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
