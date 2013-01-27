@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :remember_me, :username, :website
   # attr_accessible :title, :body
 
+  # uri pattern thanks to http://daringfireball.net/2010/07/improved_regex_for_matching_urls
   UriPattern = /\A((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/?)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s\`!()\[\]{};:\'\".,<>?«»“”‘’]))/i
   validates :website, format: UriPattern, allow_nil: true, allow_blank: true
 

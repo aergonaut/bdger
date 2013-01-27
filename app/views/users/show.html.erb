@@ -12,9 +12,11 @@
           <li>
             <a href="https://twitter.com/<%= @user.username %>" rel="external"><i class="icon-twitter"></i> @<%= @user.username %></a>
           </li>
-          <li>
-            <a href="<%= @user.website %>" rel="external"><i class="icon-link"></i> <%= @website %></a>
-          </li>
+          <% unless @website.eql? "" %>
+            <li>
+              <a href="<%= @user.website %>" rel="external"><i class="icon-link"></i> <%= @website %></a>
+            </li>
+          <% end %>
       </div>
     </div>
   </div>
