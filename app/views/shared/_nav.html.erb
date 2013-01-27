@@ -6,6 +6,7 @@
       </div>
       <div class="btn-toolbar pull-right">
         <% if user_signed_in? %>
+          <%= link_to "Badges", badges_path, class: "btn btn-link btn-large" %>
           <div class="btn-group">
             <%= link_to "Me", user_path(current_user), class: "btn btn-large" %>
             <a href="#" class="btn btn-large">Settings</a>
