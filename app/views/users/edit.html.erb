@@ -1,20 +1,22 @@
 <div class="row">
   <div class="span12">
-    <div class="page-header">
-      <h1>Edit profile</h1>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="span12">
     <%= simple_form_for current_user, html: { class: "form-horizontal" } do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :website, input_html: { class: "span6" } %>
-      <div class="control-group">
-        <div class="controls">
+      <fieldset>
+        <legend>Update profile</legend>
+        <%= f.error_notification %>
+        <div class="control-group">
+          <label class="control-label">Gravatar</label>
+          <div class="controls">
+            <%= image_tag gravatar_url(current_user, size: 48), height: 48, width: 48 %>
+            <span class="help-inline"><em>Bdger uses your <%= link_to "Gravatar", "http://www.gravatar.com/emails", rel: :external %> if you have set an email.</em></span>
+          </div>
+        </div>
+        <%= f.input :email, input_html: { class: "span6" } %>
+        <%= f.input :website, input_html: { class: "span6" } %>
+        <div class="form-actions">
           <%= f.button :submit, class: "btn-primary" %>
         </div>
-      </div>
+      </fieldset>
     <% end %>
   </div>
 </div>

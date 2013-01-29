@@ -39,7 +39,7 @@
           <% @badge.achievements.each do |a| %>
             <li class="face">
               <a href="<%= achievement_path(a.user, a) %>">
-                <img src="https://secure.gravatar.com/avatar/75f9c25580187c7a403d9dfb817fb445?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="32" />
+                <%= image_tag gravatar_url(a.user, size: 32), width: 32, height: 32, alt: a.user.username, title: a.user.username %>
               </a>
             </li>
           <% end %>

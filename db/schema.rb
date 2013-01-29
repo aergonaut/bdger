@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127064024) do
+ActiveRecord::Schema.define(:version => 20130129080134) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -53,8 +53,11 @@ ActiveRecord::Schema.define(:version => 20130127064024) do
     t.string   "username"
     t.string   "slug"
     t.string   "website"
+    t.string   "avatar"
+    t.string   "email"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
