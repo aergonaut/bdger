@@ -39,6 +39,7 @@ GEM
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     builder (3.0.4)
+    cancan (1.6.8)
     capybara (2.0.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -218,6 +219,7 @@ DEPENDENCIES
   annotate (>= 2.5.0)
   asset_sync
   bootstrap-sass
+  cancan
   capybara
   carrierwave
   carrierwave_direct

@@ -10,6 +10,7 @@ gem 'haml'
 gem 'redcarpet'
 gem 'simple_form'
 gem 'friendly_id'
+gem 'cancan'
 
 # twitter bootstrap
 gem 'bootstrap-sass'
