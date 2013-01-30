@@ -1,14 +1,17 @@
 # encoding: utf-8
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
   devise :omniauthable, :rememberable, :trackable
 
+  # Setup accessible (or protected) attributes for your model
   attr_accessible :remember_me, :username, :website, :email
+  # attr_accessible :title, :body
 
   # uri pattern thanks to http://daringfireball.net/2010/07/improved_regex_for_matching_urls
   UriPattern = /\A((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/?)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s\`!()\[\]{};:\'\".,<>?«»“”‘’]))/i
   validates :website, format: UriPattern, allow_nil: true, allow_blank: true
-
-  # email pattern thanks to http://www.regular-expressions.info/email.html
   EmailPattern = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
   validates :email, uniqueness: true, format: EmailPattern, allow_nil: true, allow_blank: true
 
