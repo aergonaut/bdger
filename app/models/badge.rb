@@ -8,4 +8,8 @@ class Badge < ActiveRecord::Base
 
   has_many :achievements
   has_many :users, through: :achievements
+
+  def image_url
+    "//#{ENV["FOG_DIRECTORY"]}.s3.amazonaws.com/badges/#{self.image}"
+  end
 end
