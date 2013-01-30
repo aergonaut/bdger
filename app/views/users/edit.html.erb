@@ -9,7 +9,7 @@
           <label class="control-label">Gravatar</label>
           <div class="controls">
             <%= image_tag gravatar_url(current_user, size: 48), height: 48, width: 48 %>
-            <span class="help-inline"><em>Bdger uses your <%= link_to "Gravatar", "http://www.gravatar.com/emails", rel: :external %> if you have set an email.</em></span>
+            <span class="help-inline"><em>Bdger uses your <%= link_to "Gravatar", "http://www.gravatar.com/emails", rel: :external %> if you have set an email</em></span>
           </div>
         </div>
         <%= f.input :email, input_html: { class: "span6" } %>
