@@ -11,7 +11,7 @@ class Achievement < ActiveRecord::Base
 
   before_save :generate_hashes
 
-  default_scope order: "created_at DESC"
+  default_scope order: "achievements.created_at DESC"
 
   private
 
