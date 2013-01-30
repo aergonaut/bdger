@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130129080134) do
+ActiveRecord::Schema.define(:version => 20130130054712) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130129080134) do
     t.string   "website"
     t.string   "avatar"
     t.string   "email"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

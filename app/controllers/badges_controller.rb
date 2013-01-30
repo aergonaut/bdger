@@ -5,10 +5,12 @@ class BadgesController < ApplicationController
 
   def new
     @badge = Badge.new
+    authorize! current_user, @badge
   end
 
   def create
     @badge = Badge.new params[:badge]
+    authorize! current_user, @badge
     if @badge.save
       flash[:success] = "Badge saved"
       redirect_to badges_path
@@ -23,10 +25,12 @@ class BadgesController < ApplicationController
 
   def edit
     @badge = Badge.find params[:id]
+    authorize! current_user, @badge
   end
 
   def update
     @badge = Badge.find params[:id]
+    authorize! current_user, @badge
     if @badge.update_attributes params[:badge]
       flash[:success] = "Badge updated"
       redirect_to edit_badge_path(@badge)
@@ -37,6 +41,7 @@ class BadgesController < ApplicationController
 
   def destroy
     @badge = Badge.find params[:id]
+    authorize! current_user, @badge
     @badge.destroy
     if @badge.destroyed?
       flash[:success] = "Badge deleted"
