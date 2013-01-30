@@ -115,5 +115,22 @@ body#home {
         text-decoration: none;
       }
     }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    h1, h2 {
+      margin: 10px 0 1em 0;
+    }
+
+    h2 {
+      font-size: 25px;
+      margin-top: 1em;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
   }
 }
