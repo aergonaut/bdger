@@ -37,6 +37,6 @@ class User < ActiveRecord::Base
   protected
 
     def downcase_email
-      self.email.downcase!
+      self.email.to_s.downcase!
     end
 end
