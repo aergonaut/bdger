@@ -11,6 +11,8 @@ class Achievement < ActiveRecord::Base
 
   before_save :generate_hashes
 
+  default_scope order: "created_at DESC"
+
   private
 
     def long_hash
