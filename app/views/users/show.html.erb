@@ -1,7 +1,7 @@
 <% provide :title, "#{@user.username} on Bdger" %>
 <div class="row">
   <div class="span2">
-    <%= image_tag gravatar_url(@user, size: 128), width: 128, height: 128 %>
+    <%= image_tag gravatar_url(@user, size: 128), width: 128, height: 128, class: "img-rounded" %>
   </div>
   <div class="span10">
     <div class="row">
