@@ -45,3 +45,7 @@ end
 group :development do
   gem 'annotate', '>= 2.5.0'
 end
+
+group :production do
+  gem 'newrelic_rpm'
+end
