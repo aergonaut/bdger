@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :rememberable, :trackable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :remember_me, :username, :website, :email
+  attr_accessible :remember_me, :username, :website, :email, :sigil
   # attr_accessible :title, :body
 
   # uri pattern thanks to http://daringfireball.net/2010/07/improved_regex_for_matching_urls
