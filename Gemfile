@@ -11,6 +11,7 @@ gem 'redcarpet'
 gem 'simple_form'
 gem 'friendly_id'
 gem 'cancan'
+gem 'honeybadger'
 
 # twitter bootstrap
 gem 'bootstrap-sass'
@@ -48,5 +49,4 @@ end
 
 group :production do
   gem 'newrelic_rpm'
-  gem 'honeybadger'
 end
