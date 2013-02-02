@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   UriPattern = /\A((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/?)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s\`!()\[\]{};:\'\".,<>?«»“”‘’]))/i
   validates :website, format: UriPattern, allow_nil: true, allow_blank: true
   EmailPattern = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
-  validates :email, uniqueness: true, format: EmailPattern, allow_nil: true, allow_blank: true
+  validates :email, format: EmailPattern, allow_nil: true, allow_blank: true
 
   extend FriendlyId
   friendly_id :username, use: :slugged
