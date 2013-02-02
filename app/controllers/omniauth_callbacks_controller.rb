@@ -8,4 +8,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
   alias_method :twitter, :all
+
+  def after_omniauth_failure_path_for(scope)
+    root_path
+  end
 end
