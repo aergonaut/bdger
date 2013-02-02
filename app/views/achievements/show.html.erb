@@ -2,7 +2,7 @@
 <% provide :share_data do %>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<%= achievement_url(@achievement.user, @achievement) %>" />
-  <meta property="og:image" content="<%= "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com/badges/#{@achievement.badge.image_url}" %>" />
+  <meta property="og:image" content="<%= "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com/badges/#{@achievement.badge.image}" %>" />
   <meta property="og:title" content="<%= yield :title %>" />
   <meta name="twitter:card" content="photo" />
   <meta name="twitter:site" content="@bdgerapp" />
