@@ -62,5 +62,23 @@ body#achievements {
         text-decoration: none;
       }
     }
+
+    ul#comments {
+      margin-top: 2em;
+
+      p {
+        font-size: 13px;
+        line-height: 17px;
+      }
+    }
+  }
+
+  #share-widgets {
+    overflow: hidden;
+
+    .widget {
+      float: left;
+      margin-right: 10px;
+    }
   }
 }

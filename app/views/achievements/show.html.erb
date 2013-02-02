@@ -1,4 +1,12 @@
 <% provide :title, "#{@achievement.user.username} claimed #{@achievement.badge.name} on Bdger" %>
+<% provide :share_data do %>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= achievement_url(@achievement.user, @achievement) %>" />
+  <meta property="og:image" content="<%= "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com/badges/#{@achievement.badge.image_url}" %>" />
+  <meta property="og:title" content="<%= yield :title %>" />
+  <meta name="twitter:card" content="photo" />
+  <meta name="twitter:site" content="@bdgerapp" />
+<% end %>
 <div class="row">
   <div class="span4 badge-icon">
     <%= image_tag @achievement.badge.image_url, width: 250, height: 250 %>
@@ -12,8 +20,38 @@
           <li>
             <i class="icon-time"></i> <%= time_ago_in_words(@achievement.created_at) %> ago
           </li>
+          <li>
+            <a href="#share_modal" data-toggle="modal"><i class="icon-share"></i> Share</a>
+          </li>
         </ul>
       </div>
+    </div>
+  </div>
+</div>
+<div id="share_modal" class="modal hide fade">
+  <div class="modal-header">
+    <strong>Share this achievement</strong>
+  </div>
+  <div class="modal-body">
+    <%= text_field_tag :share_link, "http://bdge.co/#{@achievement.short_hash}", class: "input-block-level" %>
+
+    <div id="share-widgets">
+      <div class="twitter-tweet widget"><a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-url="<%= "http://bdge.co/#{@achievement.short_hash}" %>" data-lang="en" data-related="bdgerapp" data-count="vertical">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+
+      <div class="fb-like widget" data-href="<%= "http://bdge.co/#{@achievement.short_hash}" %>" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-font="segoe ui"></div>
+
+      <!-- Place this tag where you want the +1 button to render. -->
+      <div class="g-plusone widget" data-size="tall"></div>
+
+      <!-- Place this tag after the last +1 button tag. -->
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
     </div>
   </div>
 </div>

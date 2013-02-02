@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $("#share_modal").on "shown", ->
+    $("#share_link").select()
+
+  $("#share_link").on "focus", ->
+    $(this).select()
+
+  $("#share_link").on "mouseup", (e) ->
+    e.preventDefault()
