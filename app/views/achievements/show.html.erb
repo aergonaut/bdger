@@ -23,6 +23,9 @@
           <li>
             <a href="#share_modal" data-toggle="modal"><i class="icon-share"></i> Share</a>
           </li>
+          <li>
+            <a href="<%= achievement_path(@achievement.user.username, @achievement) %>" data-method="delete" data-confirm="Are you sure you want to delete this achievement?"><i class="icon-trash"></i> Delete</a>
+          </li>
         </ul>
       </div>
     </div>
