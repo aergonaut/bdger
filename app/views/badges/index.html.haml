@@ -1,0 +1,14 @@
+.row
+  .span12
+    .page-header
+      %h1
+        All the badges
+        %small Gotta catch 'em all!
+.row
+  .span12
+    %ul.thumbnails
+      - @badges.each do |badge|
+        %li.span3
+          .thumbnail
+            %a{href: badge_path(badge)}= image_tag badge.image_url, width: 200, height: 200
+            %h5= link_to badge.name, badge_path(badge)
