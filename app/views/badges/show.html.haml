@@ -1,0 +1,40 @@
+- provide :title, "#{@badge.name} on Bdger"
+.row
+  .span4.badge-icon
+    = image_tag @badge.image_url, width: 250, height: 250
+  .span6
+    %h1= @badge.name
+    .row.meta-links
+      .span8
+        %ul.inline
+          - if user_signed_in?
+            %li#claim-badge
+              - if current_user.badges.include? @badge
+                %span.muted
+                  %i.icon-plus
+                  You have this badge
+              - else
+                %a{href: new_achievement_path(@badge), data: { remote: true }}
+                  %i.icon-plus
+                  Claim this badge
+          %li
+            %a{href: @badge.big_cartel_link, rel: :external}
+              %i.icon-external-link
+              Buy on Bigcartel
+          %li
+            %a{href: @badge.tumblr_link, rel: :external}
+              %i.icon-retweet
+              Reblog on Tumblr
+    .row
+      .span6.props-title
+        %span.count= pluralize(@badge.achievements.count, "person")
+        claimed this badge
+    .row
+      .span6
+        %ul.props.inline
+          %li.check-icon
+            %i.icon-check
+          - @badge.achievements.each do |a|
+            %li.face
+              %a{href: achievement_path(a.user, a)}
+                = image_tag gravatar_url(a.user, size: 32), width: 32, height: 32, alt: a.user.username, title: a.user.username

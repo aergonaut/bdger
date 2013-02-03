@@ -1,0 +1,19 @@
+- provide :title, "Update profile"
+.row
+  .span12
+    = simple_form_for current_user, html: { class: "form-horizontal" } do |f|
+      %fieldset
+        %legend Update profile
+        = f.error_notification
+        .control-group
+          %label.control-label Gravatar
+          .controls
+            = image_tag gravatar_url(current_user, size: 48), height: 48, width: 48
+            %span.help-inline
+              %em
+                Bdger uses your
+                = link_to "Gravatar", "http://www.gravatar.com/emails", rel: :external
+                if you have set an email
+        = f.input :email, input_html: { class: "span6" }
+        = f.input :website, input_html: { class: "span6" }
+        .form-actions= f.button :submit, class: "btn-primary"

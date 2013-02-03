@@ -1,0 +1,36 @@
+- provide :title, "#{@achievement.user.username} claimed #{@achievement.badge.name} on Bdger"
+- provide :share_data do
+  %meta{property: "og:type", content: "website"}/
+  %meta{property: "og:url", content: achievement_url(@achievement.user, @achievement)}/
+  %meta{property: "og:image", content: "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com/badges/#{@achievement.badge.image}"}/
+  %meta{property: "og:title", content: yield(:title)}/
+  %meta{name: "twitter:card", content: "photo"}/
+  %meta{name: "twitter:site", content: "@bdgerapp"}/
+.row
+  .span4.badge-icon= image_tag @achievement.badge.image_url, width: 250, height: 250
+  .span8
+    %h2
+      = link_to @achievement.user.username, user_path(@achievement.user)
+      claimed
+      = link_to @achievement.badge.name, badge_path(@achievement.badge)
+    .row.meta-links
+      .span8
+        %ul.inline
+          %li
+            %i.icon-time
+            = time_ago_in_words @achievement.created_at
+          %li
+            %a{href: "#share_modal", data: { toggle: :modal }}
+              %i.icon-share
+              Share
+          %li
+            %a{href: achievement_path(@achievement.user.username, @achievement), data: { method: :delete, confirm: "Are you sure you want to delete this achievement?"}}
+              %i.icon-trash
+              Delete
+#share_modal.modal.hide.fade
+  .modal-header
+    %strong Share this achievement
+  .modal-body
+    = text_field_tag :share_link, "http://bdge.co/#{@achievement.short_hash}", class: "input-block-level"
+    #share-widgets
+      = render partial: "share", locals: { url: "http://bdge.co/#{@achievement.short_hash}" }
