@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   before do
-    @user = build :user
+    @user = FactoryGirl.build :user
   end
 
   subject { @user }

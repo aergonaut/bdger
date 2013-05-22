@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Badge do
   before do
-    @badge = build :badge
+    @badge = FactoryGirl.build :badge
   end
 
   subject { @badge }

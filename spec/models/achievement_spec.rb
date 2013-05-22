@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Achievement do
   before do
-    @achievement = build :achievement
+    @achievement = FactoryGirl.build :achievement
   end
 
   subject { @achievement }
