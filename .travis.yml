@@ -3,8 +3,9 @@ language: ruby
 rvm:
 - 1.9.3
 before_script:
+- cp config/database.travis.yml config/database.yml
 - psql -c 'create database bdger_test;' -U postgres
-- RAILS_ENV=test bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate
 - bundle exec rake db:test:prepare
 script: bundle exec rspec spec
 env:
